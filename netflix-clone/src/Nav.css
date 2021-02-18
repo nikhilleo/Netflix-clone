@@ -1,0 +1,48 @@
+
+
+.nav__content{
+    display: flex;
+    justify-content: space-between;
+    /* width: 98.3%;
+    height: 40px;
+    padding: 2vh;
+    /* align-items: center; */
+    /* background-color: #111; */
+}
+
+.nav{
+    position: fixed;
+    top:0;
+    padding: 20px;
+    width: 100%;
+    z-index: 1;
+    height: 40px;
+    transition-timing-function: ease;
+    transition: all 0.5s;
+}
+
+.nav__black{
+    background-color: #111;
+    /* padding: 1vh; */
+}
+
+
+.nav__logo{
+    object-fit: contain;
+    padding-left: 20px;
+    cursor: pointer;
+    /* height: 40px; */
+    position: fixed;
+    left: 0px;
+    width: 130px;
+    top: 20px;
+}
+
+
+.nav__avatar{
+    top: 20px;
+    cursor: pointer;
+    position: fixed;
+    right: 20px;
+    width: 30px;
+}
