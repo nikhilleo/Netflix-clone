@@ -1,70 +1,93 @@
-
-
-.banner{
+.banner {
     top: 10;
     position: relative;
     object-fit: cover;
-    height: 90vh;
+    height: 80vh;
     color: white;
 }
 
 
-.banner__contents{
-    margin-left: 30px;
-    padding-top: 140px;
-    height: 190px;
+.banner__contents {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    padding-top:20vh;
+    height: 50vh;
+    align-content: space-around;
+    width: 100%;
+    padding-left: 10vh;
 }
 
 
-.banner__title{
+.banner__title {
+    width: 70%;
     font-size: 3rem;
-    font-weight: 800;
-    padding-bottom: 0.4rem;
+    font-weight: 400;
+    padding-bottom: 3vh;
+    color: white;
 }
 
-.banner__description{
+.banner__description {
     width: 45rem;
     color: rgb(255, 247, 247);
     line-height: 1.3;
-    padding-top: 1rem;
+    padding-top: 3vh;
     font-size: 2.2vh;
     max-width: 360px;
     height: 80px;
+    font-size: 1.2rem;
     font-weight: 500;
 }
 
 
-.banner--fadeBottom{
+.banner--fadeBottom {
     padding-top: 12.2vh;
     height: 7.2rem;
     margin-left: -30px;
-    background-image: linear-gradient(
-        180deg,
-        transparent,
-        rgba(37,37,37,0.6),
-        #111
-    );
+    background-image: linear-gradient(180deg,
+            transparent,
+            rgba(37, 37, 37, 0.6),
+            #111);
 }
 
+.banner__buttons{
+    padding-bottom: 2vh;
+}
 
-.banner__button{
+.banner__button {
     cursor: pointer;
     border: none;
     outline: none;
     color: #fff;
-    font-weight: 700;
+    font-weight: 600;
+    font-size: 3vh;
     border-radius: 0.25vw;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 3vh;
+    padding-right: 3vh;
     margin-right: 1rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 1vh;
+    padding-bottom:1vh;
     background-color: rgba(57, 57, 57, 0.5);
 }
 
 
-.banner__button:hover{
+.banner__button:hover {
     background-color: #e6e6e6;
     color: #111;
-    transition-timing-function: ease-in;transition: all 0.4s;
+    transition-timing-function: ease-in;
+    transition: all 0.4s;
+}
+
+.back {
+    display: flex;
+    height: 100vh;
+    position: relative;
+}
+
+
+.first_air{
+    font-size: 1.3rem;
+    color: white;
+    padding: 3vh 0vh;
+
 }

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import "./Banner.css"
 import Axios from "./axios";
 import requests from "./Request";
-import { ReactReduxContext } from 'react-redux';
 
 function Banner() {
 
@@ -22,41 +21,74 @@ function Banner() {
             // .catch((err)=>{
             //     console.log(err.response)
             // })
+            // console.log(movie.data.results);
             const movie = await Axios.get(requests.fetchNetflixOriginals);
-            console.log(movie.data.results);
             const no = Math.floor(Math.random() * movie.data.results.length  - 1);
-            setMovie(movie.data.results[no]);
+            console.log(no);
+            if(no>=0){
+                setMovie(movie.data.results[no]);
+            }
+            else if(no<0)
+            {
+                setMovie(movie.data.results[19])
+            }
             return movie;
         }
         fetchData();
+        if(!Movie)
+        {
+            fetchData();
+        }
     }, [])
     
-    console.log(Movie);
+    // console.log(Movie);
 
     function truncate(str,n){
         return str?.length > n ? str.substr(0,n-1) + "..." : str;
     }
 
     return (
-
-        <header className="banner" style={{
+        
+        <div className="back" style={{
             backgroundImage:`url("https://image.tmdb.org/t/p/original/${Movie?.backdrop_path}")`,
             backgroundSize:"cover",
-            backgroundPosition:"center center"
-        }}>
+            backgroundPosition:"revert"}}>
+            <div style={{backgroundImage:`linear-gradient(to right,#171717 0,rgba(23,23,23,.98) 20%,rgba(23,23,23,.97) 25%,rgba(23,23,23,.95) 35%,rgba(23,23,23,.94) 40%,rgba(23,23,23,.92) 45%,rgba(23,23,23,.9) 50%,rgba(23,23,23,.87) 55%,rgba(23,23,23,.82) 60%,rgba(23,23,23,.75) 65%,rgba(23,23,23,.63) 70%,rgba(23,23,23,.45) 75%,rgba(23,23,23,.27) 80%,rgba(23,23,23,.15) 85%,rgba(23,23,23,.08) 90%,rgba(23,23,23,.03) 95%,rgba(23,23,23,0) 100%)`, width:"50%"}}>
+                <div className="banner__contents">
+                <h1 className="banner__title">{Movie?.title || Movie?.name || Movie?.original_name}</h1>
+                <div className="banner__buttons">
+                    <button className="banner__button">Play !!</button>
+                    <button className="banner__button">My List</button>
+                </div>
+                <h4 className="first_air">{Movie?.first_air_date.split("-")[0] +  "  |"}</h4>
+                <div className="banner__description">
+                    {truncate(`${Movie?.overview}`,200)} 
+                </div>
+                </div>  
+            </div>
+            
 
-        <div className="banner__contents">
-            <h1 className="banner__title">{Movie?.title || Movie?.name || Movie?.original_name}</h1>
-            <div className="banner__buttons">
-                <button className="banner__button">Play</button>
-                <button className="banner__button">My List</button>
-            </div>
-            <div className="banner__description">
-                {truncate(`${Movie?.overview}`,150)} 
-            </div>
-            <div className="banner--fadeBottom" />
-        </div>  
-        </header>
+        </div>
+
+        // <header className="banner" style={{
+        //     backgroundImage:`url("https://image.tmdb.org/t/p/original/${Movie?.backdrop_path}")`,
+        //     backgroundSize:"cover",
+        //     backgroundPosition:"center center"
+        // }}>
+
+
+        // <div className="banner__contents">
+        //     <h1 className="banner__title">{Movie?.title || Movie?.name || Movie?.original_name}</h1>
+        //     <div className="banner__buttons">
+        //         <button className="banner__button">Play</button>
+        //         <button className="banner__button">My List</button>
+        //     </div>
+        //     <div className="banner__description">
+        //         {truncate(`${Movie?.overview}`,150)} 
+        //     </div>
+        // </div>  
+        // <div className="banner--fadeBottom" />
+        // </header>
     )
 }
 
