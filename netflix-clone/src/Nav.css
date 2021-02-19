@@ -40,6 +40,7 @@
 
 
 .nav__avatar{
+    object-fit: contain;
     top: 20px;
     cursor: pointer;
     position: fixed;
