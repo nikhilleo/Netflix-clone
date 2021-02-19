@@ -21,8 +21,8 @@ function Banner() {
             // .catch((err)=>{
             //     console.log(err.response)
             // })
-            // console.log(movie.data.results);
             const movie = await Axios.get(requests.fetchNetflixOriginals);
+            console.log(movie.data.results);
             const no = Math.floor(Math.random() * movie.data.results.length  - 1);
             console.log(no);
             if(no>=0){
@@ -60,7 +60,12 @@ function Banner() {
                     <button className="banner__button">Play !!</button>
                     <button className="banner__button">My List</button>
                 </div>
-                <h4 className="first_air">{Movie?.first_air_date.split("-")[0] +  "  |"}</h4>
+                <div className="extra_info">
+                    <h4 className="first_air" style={{color:"#a3a3a3"}} >{Movie?.first_air_date.split("-")[0] +  "  |  " + " "}</h4>
+                    <h4 className="first_air" style={{color:"#a3a3a3",textTransform:"uppercase"}} >{Movie?.original_language +  "  |"}</h4>
+                    <h4 className="first_air" style={{color:"#a3a3a3"}} >{Movie?.vote_average +  "/10 "}</h4>
+    
+                </div>
                 <div className="banner__description">
                     {truncate(`${Movie?.overview}`,200)} 
                 </div>
