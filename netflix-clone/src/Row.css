@@ -1,0 +1,53 @@
+
+
+.posters{
+    padding-bottom: 1vh;
+    justify-content: space-between;
+    display: flex;
+    overflow-y: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-padding: 10vh;
+    object-fit: contain;
+    width: 100%;
+}
+
+.row > h2{
+    padding-top: 2vh;
+    padding-left: 2vh;
+    color: aliceblue;
+}
+
+.row_poster{
+    padding: 20px;
+    height: 50vh;
+    width: 45vw;
+    transition: transform 450ms;
+}
+
+.posters::-webkit-scrollbar{
+    display: none;
+}
+
+.row_poster_small{
+    padding: 20px;
+    /* height: 42vh; */
+    width: 11vw;
+    transition: transform 450ms;
+}
+
+
+.row{
+    color: white;
+    padding-left: 3vh;
+}
+
+.row_poster:hover{
+    transform: scale(1.04);
+    opacity: 1;
+}
+
+.row_poster_small:hover{
+    transform: scale(1.04);
+    opacity: 1;
+}
