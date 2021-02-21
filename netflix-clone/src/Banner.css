@@ -14,7 +14,7 @@
     padding-top:20vh;
     height: 50vh;
     align-content: space-around;
-    width: 100%;
+    width: 130%;
     padding-left: 10vh;
 }
 
@@ -81,7 +81,7 @@
 
 .back {
     display: flex;
-    height: 100vh;
+    height: 90vh;
     position: relative;
 }
 

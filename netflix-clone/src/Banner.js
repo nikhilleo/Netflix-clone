@@ -53,17 +53,17 @@ function Banner() {
             backgroundImage:`url("https://image.tmdb.org/t/p/original/${Movie?.backdrop_path}")`,
             backgroundSize:"cover",
             backgroundPosition:"revert"}}>
-            <div style={{backgroundImage:`linear-gradient(to right,#171717 0,rgba(23,23,23,.98) 20%,rgba(23,23,23,.97) 25%,rgba(23,23,23,.95) 35%,rgba(23,23,23,.94) 40%,rgba(23,23,23,.92) 45%,rgba(23,23,23,.9) 50%,rgba(23,23,23,.87) 55%,rgba(23,23,23,.82) 60%,rgba(23,23,23,.75) 65%,rgba(23,23,23,.63) 70%,rgba(23,23,23,.45) 75%,rgba(23,23,23,.27) 80%,rgba(23,23,23,.15) 85%,rgba(23,23,23,.08) 90%,rgba(23,23,23,.03) 95%,rgba(23,23,23,0) 100%)`, width:"50%"}}>
+            <div style={{backgroundImage:`linear-gradient(to right,#171717 0,rgba(23,23,23,.98) 20%,rgba(23,23,23,.97) 25%,rgba(23,23,23,.95) 35%,rgba(23,23,23,.94) 40%,rgba(23,23,23,.92) 45%,rgba(23,23,23,.9) 50%,rgba(23,23,23,.87) 55%,rgba(23,23,23,.82) 60%,rgba(23,23,23,.75) 65%,rgba(23,23,23,.63) 70%,rgba(23,23,23,.45) 75%,rgba(23,23,23,.27) 80%,rgba(23,23,23,.15) 85%,rgba(23,23,23,.08) 90%,rgba(23,23,23,.03) 95%,rgba(23,23,23,0) 100%)`, width:"70%"}}>
                 <div className="banner__contents">
-                <h1 className="banner__title">{Movie?.title || Movie?.name || Movie?.original_name}</h1>
-                <div className="banner__buttons">
-                    <button className="banner__button">Play !!</button>
-                    <button className="banner__button">My List</button>
-                </div>
-                <div className="extra_info">
-                    <h4 className="first_air" style={{color:"#a3a3a3"}} >{Movie?.first_air_date.split("-")[0] +  "  |  " + " "}</h4>
-                    <h4 className="first_air" style={{color:"#a3a3a3",textTransform:"uppercase"}} >{Movie?.original_language +  "  |"}</h4>
-                    <h4 className="first_air" style={{color:"#a3a3a3"}} >{Movie?.vote_average +  "/10 "}</h4>
+                    <h1 className="banner__title">{Movie?.title || Movie?.name || Movie?.original_name}</h1>
+                    <div className="banner__buttons">
+                        <button className="banner__button">Play !!</button>
+                        <button className="banner__button">My List</button>
+                    </div>
+                    <div className="extra_info">
+                        <h4 className="first_air" style={{color:"#a3a3a3"}} >{Movie?.first_air_date.split("-")[0] +  "  |  " + " "}</h4>
+                        <h4 className="first_air" style={{color:"#a3a3a3",textTransform:"uppercase"}} >{Movie?.original_language +  "  |"}</h4>
+                        <h4 className="first_air" style={{color:"#a3a3a3"}} >{Movie?.vote_average +  " / 10 "}</h4>
     
                 </div>
                 <div className="banner__description">
