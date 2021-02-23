@@ -51,3 +51,43 @@
     transform: scale(1.04);
     opacity: 1;
 }
+
+
+@media only screen and (max-width: 290px){
+    .row_poster{
+        padding: 20px;
+        height: 20vh;
+        width: 45vw;
+        transition: transform 450ms;
+    }
+}
+
+
+@media only screen and (max-width: 440px){
+    .row_poster{
+        padding: 20px;
+        height: 20vh;
+        width: 45vw;
+        transition: transform 450ms;
+    }
+}
+
+
+@media only screen and (max-width: 768px){
+    .row_poster{
+        padding: 20px;
+        height: 20vh;
+        width: 45vw;
+        transition: transform 450ms;
+    }
+}
+
+
+@media only screen and (min-width: 768px){
+    .row_poster{
+        padding: 20px;
+        height: 44vh;
+        width: 45vw;
+        transition: transform 450ms;
+    }
+}
