@@ -24,6 +24,9 @@ app.get('/', async (req, res) => {
     cloudinary.api.delete_resources_by_prefix("TrendingPosters/", function (re) {
         // console.log(res);
     });
+    cloudinary.api.delete_resources_by_prefix("TrendingCarousal/", function (re) {
+        // console.log(res);
+    });
     await Trending.remove({});
     const trending = await Axios.get(`${process.env.TMDB_BASE_URL}${process.env.fetchTrending}`)
     trendingdata = trending.data.results;
@@ -132,7 +135,7 @@ function carousal_downUp(id, name, url) {
                 folder: "TrendingCarousal/"
             });
             const data = await Trending.findByIdAndUpdate({_id:id},{carousal_img:img_url.url});
-            console.log(data);
+            // console.log(data);
             fs.unlink(filename, (err) => {
                 if (err) console.log(err)
                 else
