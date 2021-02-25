@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./Banner.css"
-import Axios from "./axios";
-import requests from "./Request";
+import Axios from "../axios";
+import requests from "../Request";
 
 function Banner() {
 
@@ -48,7 +48,7 @@ function Banner() {
     }
 
     return (
-        
+
         <div className="back" style={{
             backgroundImage:`url("https://image.tmdb.org/t/p/original/${Movie?.backdrop_path}")`,
             backgroundSize:"cover",
