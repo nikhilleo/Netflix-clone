@@ -56,18 +56,31 @@
 @media only screen and (max-width: 290px){
     .row_poster{
         padding: 20px;
-        height: 20vh;
-        width: 45vw;
+        height: 29vh;
+        width: 34vw;
         transition: transform 450ms;
     }
+    .row_poster_small{
+        padding: 20px;
+        /* height: 42vh; */
+        width: 200vw;
+        transition: transform 450ms;
+    }
+    
 }
 
 
 @media only screen and (max-width: 440px){
     .row_poster{
         padding: 20px;
-        height: 20vh;
-        width: 45vw;
+        height: 29vh;
+        width: 34vw;
+        transition: transform 450ms;
+    }
+    .row_poster_small{
+        padding: 20px;
+        /* height: 42vh; */
+        width: 20vw;
         transition: transform 450ms;
     }
 }
@@ -76,8 +89,14 @@
 @media only screen and (max-width: 768px){
     .row_poster{
         padding: 20px;
-        height: 20vh;
-        width: 45vw;
+        height: 29vh;
+        width: 34vw;
+        transition: transform 450ms;
+    }
+    .row_poster_small{
+        padding: 20px;
+        /* height: 42vh; */
+        width: 34vw;
         transition: transform 450ms;
     }
 }
@@ -86,8 +105,14 @@
 @media only screen and (min-width: 768px){
     .row_poster{
         padding: 20px;
-        height: 44vh;
-        width: 45vw;
+        height: 39vh;
+        width: 34vw;
+        transition: transform 450ms;
+    }
+    .row_poster_small{
+        padding: 20px;
+        /* height: 42vh; */
+        width: 28vw;
         transition: transform 450ms;
     }
 }
