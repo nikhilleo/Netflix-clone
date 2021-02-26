@@ -60,12 +60,12 @@
         width: 34vw;
         transition: transform 450ms;
     }
-    .row_poster_small{
+    /* .row_poster_small{
         padding: 20px;
-        /* height: 42vh; */
+        height: 10vh;
         width: 200vw;
         transition: transform 450ms;
-    }
+    } */
     
 }
 
@@ -73,14 +73,14 @@
 @media only screen and (max-width: 440px){
     .row_poster{
         padding: 20px;
-        height: 29vh;
-        width: 34vw;
+        height: 30vh;
+        width: 35vw;
         transition: transform 450ms;
     }
     .row_poster_small{
         padding: 20px;
-        /* height: 42vh; */
-        width: 20vw;
+        height: 25vh;
+        width: 31vw;
         transition: transform 450ms;
     }
 }
@@ -89,13 +89,13 @@
 @media only screen and (max-width: 768px){
     .row_poster{
         padding: 20px;
-        height: 29vh;
-        width: 34vw;
+        height: 27vh;
+        width: 40vw;
         transition: transform 450ms;
     }
     .row_poster_small{
         padding: 20px;
-        /* height: 42vh; */
+        height: 25vh; 
         width: 34vw;
         transition: transform 450ms;
     }
@@ -105,14 +105,47 @@
 @media only screen and (min-width: 768px){
     .row_poster{
         padding: 20px;
-        height: 39vh;
-        width: 34vw;
+        height: 37vw;
+        width: 37vw;
         transition: transform 450ms;
     }
     .row_poster_small{
         padding: 20px;
-        /* height: 42vh; */
-        width: 28vw;
+        height: 22vh;
+        width: 24vw;
+        transition: transform 450ms;
+    }
+}
+
+
+@media only screen and (min-width: 872px){
+    .row_poster{
+        padding: 20px;
+        height: 48vh;
+        width: 37vw;
+        transition: transform 450ms;
+    }
+    .row_poster_small{
+        padding: 20px;
+        height: 38vh;
+        width: 24vw;
+        transition: transform 450ms;
+    }
+}
+
+
+
+@media only screen and (min-width: 1000px){
+    .row_poster{
+        padding: 20px;
+        height: 40vh;
+        width: 37vw;
+        transition: transform 450ms;
+    }
+    .row_poster_small{
+        padding: 20px;
+        height: 33.5vh;
+        width: 24vw;
         transition: transform 450ms;
     }
 }
