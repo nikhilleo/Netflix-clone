@@ -7,6 +7,13 @@ function Banner() {
 
     const [Movie, setMovie] = useState();
 
+    const [Data, setData] = useState()
+
+    const handleChange = ()=>{
+        // setInterval(() => {
+        //     setData(Math.floor(Math.random() * 20));
+        // }, 7000);
+    }
 
     useEffect(() => {
         async function fetchData()
@@ -39,7 +46,7 @@ function Banner() {
         {
             fetchData();
         }
-    }, [])
+    }, []);
     
     // console.log(Movie);
 
@@ -57,7 +64,7 @@ function Banner() {
                 <div className="banner__contents">
                     <h1 className="banner__title">{Movie?.title || Movie?.name || Movie?.original_name}</h1>
                     <div className="banner__buttons">
-                        <button className="banner__button">Play !!</button>
+                        <button className="banner__button" onClick={handleChange}>Play !!</button>
                         <button className="banner__button">My List</button>
                     </div>
                     <div className="extra_info">
