@@ -42,6 +42,11 @@ const trendingSchema = mongoose.Schema({
         type:String,
         // unique:true,
         // required:true
+    },
+    trailer_url:{
+        type:Array,
+        default:[],
+        required:true
     }
 },{timestamps:true});
 
