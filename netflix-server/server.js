@@ -9,8 +9,9 @@ const download = require('image-downloader')
 const Trending = require("./models/trending");
 const cloudinary = require('cloudinary').v2;
 var trendingdata = [];
+const yts = require( 'yt-search' )
 const fs = require("fs");
-
+const { SSL_OP_SSLEAY_080_CLIENT_DH_BUG } = require("constants");
 
 cloudinary.config({
     cloud_name: 'uccrgo5202',
@@ -63,7 +64,16 @@ app.get('/', async (req, res) => {
                         });
                         // await console.log(img_url);
                         data.poster_img = img_url.url
-                        // console.log(data)
+                        console.log(data.date_of_release.split("-")[0]);
+                        var cnt = 1;
+                        if(cnt==1)
+                        {
+                            const r = await yts(`${data.name} English Dubbed Final Trailer ${data.date_of_release.split("-")[0]}`)
+                            r.all.length = 10
+                            console.log(r.all[1]);
+                            cnt++;
+                        }
+                        // console.log(data) 
                         const trending_data = await new Trending(data);
                         await trending_data.save();
                         carousal_downUp(trending_data._id, trending_data.name, process.env.BACK_IMAGE_URL + trendingdata[i].backdrop_path);
