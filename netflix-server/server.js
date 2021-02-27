@@ -31,13 +31,26 @@ cloudinary.config({
 app.use(morgan("dev"));
 
 app.get('/', async (req, res) => {
-    cloudinary.api.delete_resources_by_prefix("TrendingPosters/", function (re) {
-        // console.log(re);
-    });
-    cloudinary.api.delete_resources_by_prefix("TrendingCarousal/", function (re) {
-        // console.log(re);
-    });
-    await Trending.remove({});
+    // cloudinary.api.delete_folder("TrendingCarousal/",(res)=>{
+    //     console.log(res)
+    // })
+    // cloudinary.api.delete_folder("TrendingPosters/",(res)=>{
+    //     console.log(res)
+    // })
+    // cloudinary.api.delete_resources_by_prefix('TrendingPosters/', function(result){
+    //     console.log(result)
+    // })
+    const pos_deleted = await cloudinary.api.delete_resources_by_prefix("TrendingPosters/")
+    console.log(pos_deleted);
+    const car_deleted = await cloudinary.api.delete_resources_by_prefix('TrendingCarousal/')
+    console.log(car_deleted);
+    // cloudinary.api.delete_resources_by_prefix("TrendingCarousal/", function (re) {
+    //     console.log(re);
+    // });
+    // cloudinary.api.delete_resources_by_prefix("TrendingPosters/", function (re) {
+    //     console.log(re);
+    // });
+    await Trending.deleteMany({});
     const trending = await Axios.get(`${process.env.TMDB_BASE_URL}${process.env.fetchTrending}`)
     trendingdata = trending.data.results;
     for (let i = 0; i < trendingdata.length; i++) {
