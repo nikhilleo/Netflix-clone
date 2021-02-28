@@ -61,11 +61,13 @@
     width: 50%;
     padding-left: 6vh;
     line-height: 4vh;
+    padding-left: 10vw;
 }
 
 .info > p{
     width: 80%;
     padding-bottom: 3vh;
+
 }
 
 .info > button{
@@ -85,7 +87,7 @@
 }
 
 .movie_info{
-    justify-content: space-around;
+    justify-content: space-between;
     margin-left: -3vh;
     height:"30vh";
     background-color:"red"; 
@@ -94,8 +96,8 @@
 }
 
 .row_info_image{
-    margin-left: -20vw;
-    height: 40vh;
+    width: 90%;
+    margin-left: 5%;
 }
 
 .info > h5{
@@ -117,11 +119,30 @@
         width: 200vw;
         transition: transform 450ms;
     } */
-    
+    .row_info_image > img {
+        margin-left: 10% !important;
+        width: 90% !important;
+    }
+    .movie_info{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .info{
+        width: 85%;
+        line-height: 3.5vh;
+    }
+    .info > button{
+        width: 16vw;
+        font-size: 1.5rem;
+    }
+    .info > p {
+        width: 90%;
+        padding-bottom: 3vh;
+    }
 }
 
 
-@media only screen and (max-width: 440px){
+@media only screen and (max-width: 500px){
     .row_poster{
         padding: 20px;
         height: 30vh;
@@ -133,6 +154,26 @@
         height: 25vh;
         width: 31vw;
         transition: transform 450ms;
+    }
+    .row_info_image > img {
+        margin-left: 10%;
+        width: 80%;
+    }
+    .movie_info{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .info{
+        width: 85%;
+        line-height: 3.5vh;
+    }
+    .info > button{
+        width: 16vw;
+        font-size: 1.5rem;
+    }
+    .info > p {
+        width: 80%;
+        padding-bottom: 3vh;
     }
 }
 
@@ -149,6 +190,26 @@
         height: 25vh; 
         width: 34vw;
         transition: transform 450ms;
+    }
+    .row_info_image > img {
+        margin-left: 10%;
+        width: 80%;
+    }
+    .movie_info{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .info{
+        width: 85%;
+        line-height: 3.5vh;
+    }
+    .info > button{
+        width: 16vw;
+        font-size: 1.5rem;
+    }
+    .info > p {
+        width: 87%;
+        padding-bottom: 3vh;
     }
 }
 
@@ -182,6 +243,7 @@
         width: 24vw;
         transition: transform 450ms;
     }
+
 }
 
 
@@ -198,5 +260,9 @@
         height: 33.5vh;
         width: 28vw;
         transition: transform 450ms;
+    }
+    .row_info_image{
+        width: 50%;
+        margin-left: 25%;
     }
 }
