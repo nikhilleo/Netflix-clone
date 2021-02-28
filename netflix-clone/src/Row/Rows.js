@@ -3,6 +3,24 @@ import Axios from "../axios";
 import "./Row.css"
 
 function Rows({title,fetchURL,isLarge}) {
+
+
+    const [Movie, setMovie] = useState();
+
+
+    const handleClick = (movie) => {
+        if(Movie)
+        {
+            setMovie()
+        }
+        else
+        {
+            setMovie(movie);
+        }
+    }
+    
+
+
     const img_path = "https://image.tmdb.org/t/p/original/"
     const [Movies, setMovies] = useState([])
     
@@ -26,8 +44,10 @@ function Rows({title,fetchURL,isLarge}) {
                 (!isLarge && movie.poster_path)) && (
                 <>
                     <img 
+                    onClick={()=>handleClick(movie)}
                     key={movie.id }
-                    className={isLarge ? "row_poster" : "row_poster_small"} 
+                    // className={isLarge ? "row_poster" : "row_poster_small"} 
+                    className={isLarge ? "row_poster" : "row_poster_small"}
                     src={`${img_path}${movie.poster_path}`} 
                     alt={movie.name}/>
                     {/* <span className="title">{movie.name ? movie.name : movie.original_title}</span> */}
@@ -35,6 +55,17 @@ function Rows({title,fetchURL,isLarge}) {
                 
                 )))}
             </div>
+            {Movie ? 
+            (<div className="movie_info" style={{}}>
+                <div className="info">
+                    <h5>{Movie.title}</h5>
+                    <p>{Movie.overview}</p>
+                    <button>Play</button>
+                </div>
+                <div className="image">
+                    <img className="row_info_image" src={`https://image.tmdb.org/t/p/original/${Movie?.backdrop_path}`} alt=""/>
+                </div>
+            </div>) : ""}
         </div>
     )
 }

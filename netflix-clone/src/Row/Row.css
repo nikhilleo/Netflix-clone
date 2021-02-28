@@ -53,6 +53,57 @@
 }
 
 
+.info{
+    padding: 1vh;
+    /* border: 1px solid snow; */
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding-left: 6vh;
+    line-height: 4vh;
+}
+
+.info > p{
+    width: 80%;
+    padding-bottom: 3vh;
+}
+
+.info > button{
+    background-color: rgba(57, 57, 57, 0.5);
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0.25vw;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    margin-right: 1rem;
+    padding-top: 1vh;
+    font-size: 3vh;
+    width: 7vw;
+    padding-bottom: 1vh;
+}
+
+.movie_info{
+    justify-content: space-around;
+    margin-left: -3vh;
+    height:"30vh";
+    background-color:"red"; 
+    width:"100%";
+    display: flex;
+}
+
+.row_info_image{
+    margin-left: -20vw;
+    height: 40vh;
+}
+
+.info > h5{
+    padding-bottom: 2.5vh;
+    font-size: 1.5rem;
+}
+
+
 @media only screen and (max-width: 290px){
     .row_poster{
         padding: 20px;
@@ -145,7 +196,7 @@
     .row_poster_small{
         padding: 20px;
         height: 33.5vh;
-        width: 24vw;
+        width: 28vw;
         transition: transform 450ms;
     }
 }
