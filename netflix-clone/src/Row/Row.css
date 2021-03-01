@@ -70,7 +70,7 @@
 
 }
 
-.info > button{
+.info_buttons > button{
     background-color: rgba(57, 57, 57, 0.5);
     border: none;
     outline: none;
@@ -82,7 +82,6 @@
     margin-right: 1rem;
     padding-top: 1vh;
     font-size: 3vh;
-    width: 7vw;
     padding-bottom: 1vh;
 }
 
@@ -102,9 +101,66 @@
 
 .info > h5{
     padding-bottom: 2.5vh;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
+.info_buttons > button:hover{
+    background-color: #e6e6e6;
+    color: #111;
+    transition-timing-function: ease-in;
+    transition: all 0.4s;
+}
+
+
+.video{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    scroll-margin-block: 1vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.video > button{
+    position: fixed;
+    top: 17.5vh;
+    left: 77%;
+    background-color: rgba(57, 57, 57, 0.8);
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 0.25vw;
+    padding-left: 3vh;
+    padding-right: 3vh;
+    margin-right: 1rem;
+    padding-top: 1vh;
+    font-size: 3vh;
+    padding-bottom: 1vh;
+}
+
+.video > button:hover{
+    background-color: #e6e6e6;
+    color: #111;
+    transition-timing-function: ease-in;
+    transition: all 0.4s;
+}
+
+
+.videoNone{
+    display: none;
+}
+
+.dis{
+    overflow: hidden;
+}
+
+.video > #a{
+    position: fixed;
+    left: 0;
+    top: 25%;
+}
 
 @media only screen and (max-width: 290px){
     .row_poster{
@@ -211,6 +267,13 @@
         width: 87%;
         line-height: 19px;
         padding-bottom: 3vh;
+    }
+    #a{
+        position: fixed;
+        left: 10% !important;
+        top: 40% !important;
+        width:80% !important;
+        height:auto !important;
     }
 }
 

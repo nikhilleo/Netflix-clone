@@ -1,27 +1,45 @@
 import React, { useEffect, useState } from 'react'
 import Axios from "../axios";
 import "./Row.css"
+import ReactPlayer from 'react-player'
 
 function Rows({title,fetchURL,isLarge}) {
 
 
     const [Movie, setMovie] = useState();
 
-    const [Netflix, setNetflix] = useState();
+    const [Trailer, setTrailer] = useState();
     
+
+    const showTrailer = (Movie)=>{
+        setTrailer(Movie.trailer_url[0])
+        var video = document.getElementById("video");
+        if(video)
+        {
+            video?.classList.remove("videoNone")
+        }
+        document.body.classList.add("dis")
+    }
+
+    const closeVideo =  ()=>{
+        var video = document.getElementById("video");
+        if(video)
+        {
+            video?.classList.add("videoNone")
+            document.body.classList.remove("dis")
+        }
+    }
 
     const handleClick = (movie) => {
         if(Movie?.name==movie.name)
         {
             setMovie()
             console.log("in if Else")
-            console.log(Netflix);
         }
         else
         {
             console.log("in netflix");
             setMovie(movie);
-            console.log(Netflix);
         }
         // // console.log(movie.name);
         // if(Movie?.title == movie?.title)
@@ -40,8 +58,6 @@ function Rows({title,fetchURL,isLarge}) {
         return str?.length > n ? str.substr(0,n-1) + "..." : str;
     }
 
-
-    const img_path = "https://image.tmdb.org/t/p/original/"
     const [Movies, setMovies] = useState([])
     
     useEffect(() => {
@@ -80,12 +96,28 @@ function Rows({title,fetchURL,isLarge}) {
                 <div className="info">
                     <h5>{Movie.name}</h5>
                     <p>{truncate(Movie.overview,200) }</p>
-                    <button>Play</button>
+                   <div className="info_buttons">
+                   <button onClick={()=>showTrailer(Movie)}>Trailer</button>
+                   <button>Watch</button>
+                   </div>
                 </div>
                 <div className="image">
                     <img className="row_info_image" src={`${Movie.carousal_img}`} alt=""/>
                 </div>
-            </div>) : ""}
+            </div>
+                ) : ""}
+                {Trailer ? (
+                    <div id="video" className="video">
+                    <ReactPlayer id="a" width="50vw" height='60vh' style={{
+                        // display:"block",
+                        position:"fixed",
+                        top:"25%",
+                        left:"25%"
+                        // marginBottom:"400px"
+                    }} controls="true" url={Trailer} />
+                    <button onClick={closeVideo}>X</button>
+                </div>
+                ): ""}
         </div>
     )
 }
