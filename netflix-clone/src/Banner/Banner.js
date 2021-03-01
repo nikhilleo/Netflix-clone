@@ -29,6 +29,7 @@ function Banner() {
             //     console.log(err.response)
             // })
             const movie = await Axios.get(requests.fetchNetflixOriginals);
+            console.log(movie)
             console.log(movie.data.results);
             const no = Math.floor(Math.random() * movie.data.results.length  - 1);
             console.log(no);
