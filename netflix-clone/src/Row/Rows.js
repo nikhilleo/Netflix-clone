@@ -12,7 +12,7 @@ function Rows({title,fetchURL,isLarge}) {
     
 
     const showTrailer = (Movie)=>{
-        setTrailer(Movie.trailer_url[0])
+        setTrailer(Movie.trailer_url)
         var video = document.getElementById("video");
         if(video)
         {
@@ -28,6 +28,7 @@ function Rows({title,fetchURL,isLarge}) {
             video?.classList.add("videoNone")
             document.body.classList.remove("dis")
         }
+        setTrailer();
     }
 
     const handleClick = (movie) => {
