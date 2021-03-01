@@ -11,7 +11,8 @@ const cloudinary = require('cloudinary').v2;
 var trendingdata = [];
 const yts = require('yt-search')
 const fs = require("fs");
-
+const cors = require("cors");
+const trending_routes = require("./routes/trending");
 
 // setInterval(()=>{
 //     Axios.get("http://localhost:8080/").then((res)=>{
@@ -28,9 +29,13 @@ cloudinary.config({
     api_secret: 'cYf_aqrJ75P1eIGAHu9a3uyOYCE'
 });
 
+app.use(cors());
+
 app.use(morgan("dev"));
 
-app.get('/', async (req, res) => {
+app.use("/trending",trending_routes);
+
+app.get('/updateTrending/', async (req, res) => {
     // cloudinary.api.delete_folder("TrendingCarousal/",(res)=>{
     //     console.log(res)
     // })
@@ -160,6 +165,10 @@ function getURL(data, name1) {
     }
     return goodLinks;
 }
+
+app.use("/",(req,res)=>{
+    res.send("Hello From Netflix Server");
+});
 
 app.listen(port, () => {
     console.log(`Server started http://localhost:${port}`);
