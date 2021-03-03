@@ -9,7 +9,7 @@ const port = process.env.PORT
 const cors = require("cors");
 const trending_routes = require("./routes/trending");
 const original_routes = require("./routes/originals");
-
+const topRated_routes = require("./routes/topRated");
 app.use(cors());
 
 app.use(morgan("dev"));
@@ -18,6 +18,7 @@ app.use("/trending",trending_routes);
 
 app.use("/originals",original_routes);
 
+app.use("/topRated",topRated_routes);
 
 app.use("/",(req,res)=>{
     res.send("Hello From Netflix Server");
