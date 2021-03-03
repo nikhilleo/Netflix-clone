@@ -1,13 +1,12 @@
 
-
+require("dotenv").config();
 const download = require('image-downloader')
 const cloudinary = require('cloudinary').v2;
-var trendingdata = [];
+var netflix_originals = [];
 const Axios = require("axios");
 const yts = require('yt-search')
 const fs = require("fs");
-const Trending = require("../models/trending"); 
-
+const Originals = require("../models/netflixOriginals"); 
 
 
 cloudinary.config({
@@ -17,34 +16,35 @@ cloudinary.config({
 });
 
 
-
-exports.updateTrending = async(req,res)=>{
-    const pos_deleted = await cloudinary.api.delete_resources_by_prefix("TrendingPosters/")
+exports.updateOriginals = async(req,res)=>{
+    try {
+    console.log("In Try");
+    const pos_deleted = await cloudinary.api.delete_resources_by_prefix("NetflixOriginalsPosters/")
     console.log(pos_deleted);
-    const car_deleted = await cloudinary.api.delete_resources_by_prefix('TrendingCarousal/')
+    const car_deleted = await cloudinary.api.delete_resources_by_prefix('NetflixOriginalsCarousal/')
     console.log(car_deleted);
-    await Trending.deleteMany({});
-    const trending = await Axios.get(`${process.env.TMDB_BASE_URL}${process.env.fetchTrending}`)
-    trendingdata = trending.data.results;
-    for (let i = 0; i < trendingdata.length; i++) {
-        if (trendingdata[i].title || trendingdata[i].name) {
+    await Originals.deleteMany({});
+    const originals = await Axios.get(`${process.env.TMDB_BASE_URL}${process.env.fetchNetflixOriginals}`)
+    netflix_originals = originals.data.results;
+    for (let i = 0; i < netflix_originals.length; i++) {
+        if (netflix_originals[i].title || netflix_originals[i].name) {
             const data = {
-                tmdb_id: trendingdata[i].id,
-                name: trendingdata[i].title || trendingdata[i].name,
-                overview: trendingdata[i].overview,
-                date_of_release: trendingdata[i].release_date || trendingdata[i].first_air_date,
-                language: trendingdata[i].original_language,
-                avg_votes: trendingdata[i].vote_average,
+                tmdb_id: netflix_originals[i].id,
+                name: netflix_originals[i].title || netflix_originals[i].name,
+                overview: netflix_originals[i].overview,
+                date_of_release: netflix_originals[i].release_date || netflix_originals[i].first_air_date,
+                language: netflix_originals[i].original_language,
+                avg_votes: netflix_originals[i].vote_average,
             }
-            if (trendingdata[i].title) {
+            if (netflix_originals[i].title) {
                 var options = {
-                    url: process.env.BACK_IMAGE_URL + trendingdata[i].poster_path,
-                    dest: `./PosterUploads/${trendingdata[i].title}.jpg`,
+                    url: process.env.BACK_IMAGE_URL + netflix_originals[i].poster_path,
+                    dest: `./PosterUploads/${netflix_originals[i].title}.jpg`,
                 }
-            } else if (trendingdata[i].name) {
+            } else if (netflix_originals[i].name) {
                 var options = {
-                    url: process.env.BACK_IMAGE_URL + trendingdata[i].poster_path,
-                    dest: `./PosterUploads/${trendingdata[i].name}.jpg`,
+                    url: process.env.BACK_IMAGE_URL + netflix_originals[i].poster_path,
+                    dest: `./PosterUploads/${netflix_originals[i].name}.jpg`,
                 }
             }
             download.image(options)
@@ -53,7 +53,7 @@ exports.updateTrending = async(req,res)=>{
                 }) => {
                     if (filename) { 
                         const img_url = await cloudinary.uploader.upload(filename, {
-                            folder: "TrendingPosters/"
+                            folder: "NetflixOriginalsPosters/"
                         });
                         data.poster_img = img_url.url
                         var cnt = 1;
@@ -63,9 +63,9 @@ exports.updateTrending = async(req,res)=>{
                             data.trailer_url = trailer_url
                             cnt++;
                         }
-                        const trending_data = await new Trending(data);
-                        await trending_data.save();
-                        carousal_downUp(trending_data._id, trending_data.name, process.env.BACK_IMAGE_URL + trendingdata[i].backdrop_path);
+                        const originals = await new Originals(data);
+                        await originals.save();
+                        carousal_downUp(originals._id, originals.name, process.env.BACK_IMAGE_URL + netflix_originals[i].backdrop_path);
                         fs.unlink(filename, (err) => {
                             if (err) console.log(err)
                             else
@@ -76,7 +76,12 @@ exports.updateTrending = async(req,res)=>{
                 .catch((err) => console.log(err))
         }
     }
-    res.send("Updated Trending");
+    res.send("Updated Originals");
+    } catch (error) {
+        console.log(error);
+        res.send(error.message)
+        
+    }
 }
 
 
@@ -91,9 +96,9 @@ function carousal_downUp(id, name, url) {
         }) => {
             if (filename) {
                 const img_url = await cloudinary.uploader.upload(filename, {
-                    folder: "TrendingCarousal/"
+                    folder: "NetflixOriginalsCarousal/"
                 });
-                const data = await Trending.findByIdAndUpdate({
+                const data = await Originals.findByIdAndUpdate({
                     _id: id
                 }, {
                     carousal_img: img_url.url
@@ -137,21 +142,19 @@ function getURL(data, name1) {
 
 
 
-
-
-exports.getTrending = async(req,res)=>{
+exports.getOriginals = async(req,res)=>{
     // res.send("Trending Get");
     try {
-        const allTrending = await Trending.find({});
-        if(allTrending.length < 1)
+        const allOriginals = await Originals.find({});
+        if(allOriginals.length < 1)
         {
-            throw new Error("No Trending Data");
+            throw new Error("No Originals Data");
         }
         else {
-            res.status(200).send(allTrending);
+            res.status(200).send(allOriginals);
         }
     } catch (error) {
-        if(error.message=="No Trending Data")
+        if(error.message=="No Originals Data")
         {
             res.status(404).send(error.message)
         }
