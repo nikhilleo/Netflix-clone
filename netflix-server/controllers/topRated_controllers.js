@@ -24,7 +24,7 @@ exports.updateTopRated = async(req,res)=>{
     const car_deleted = await cloudinary.api.delete_resources_by_prefix('TopRatedCarousal/')
     console.log(car_deleted);
     await TopRated.deleteMany({});
-    const topRated = await Axios.get(`${process.env.TMDB_BASE_URL}${process.env.fetchNetflixOriginals}`)
+    const topRated = await Axios.get(`${process.env.TMDB_BASE_URL}${process.env.fetchTopRated}`)
     TopRatedData = topRated.data.results;
     for (let i = 0; i < TopRatedData.length; i++) {
         if (TopRatedData[i].title || TopRatedData[i].name) {
