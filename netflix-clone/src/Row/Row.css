@@ -147,6 +147,12 @@
     transition: all 0.4s;
 }
 
+.row_info_image1{
+    width: 25%;
+    height: 250px;
+    margin-left: 25%;
+}
+
 
 .videoNone{
     display: none;

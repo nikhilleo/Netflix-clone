@@ -13,6 +13,7 @@ function Rows({title,fetchURL,isLarge}) {
 
     const showTrailer = (Movie)=>{
         setTrailer(Movie.trailer_url)
+        console.log(Movie.trailer_url.length);
         var video = document.getElementById("video");
         if(video)
         {
@@ -79,7 +80,8 @@ function Rows({title,fetchURL,isLarge}) {
             <div className="posters">
                 {Movies.map(movie=>(
                 (
-                <>
+                movie.trailer_url.length >= 1 ?
+                (<>
                     <img 
                     key={movie.id}
                     // className={isLarge ? "row_poster" : "row_poster_small"} 
@@ -88,8 +90,8 @@ function Rows({title,fetchURL,isLarge}) {
                     src={`${movie.poster_img}`} 
                     alt={movie.name}/>
                     {/* <span className="title">{movie.name ? movie.name : movie.original_title}</span> */}
-                </>
-                
+                </>)
+                : ""
                 )))}
             </div>
             {Movie ?
@@ -102,9 +104,17 @@ function Rows({title,fetchURL,isLarge}) {
                    <button>Watch</button>
                    </div>
                 </div>
+                {Movie.carousal_img ? (
                 <div className="image">
                     <img className="row_info_image" src={`${Movie.carousal_img}`} alt=""/>
+                </div>)
+                :
+                (
+                <div className="image">
+                <img className="row_info_image1" src={`${Movie.poster_img}`} alt=""/>
                 </div>
+                )}
+                
             </div>
                 ) : ""}
                 {Trailer ? (
