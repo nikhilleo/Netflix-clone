@@ -15,6 +15,11 @@ const originalsSchema = mongoose.Schema({
         // unique:true,
         required:true
     },
+    title:{
+        type:String,
+        // unique:true,
+        required:true
+    },
     overview:{
         type:String,
         // unique:true,
@@ -23,7 +28,8 @@ const originalsSchema = mongoose.Schema({
     date_of_release:{
         type:String,
         // unique:true,
-        required:true
+        required:true,
+        default:"Coming Soon"
     },
     language:{
         type:String,
