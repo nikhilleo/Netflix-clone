@@ -10,29 +10,29 @@ function HomeScreen() {
         <div className="homeScreen">
             <Nav/>
             <Banner/> 
-            {/* <Rows
+            <Rows
                 title="Netflix Originals"
                 fetchURL={requests.fetchNetflixOriginals}
                 isLarge={true}
             />
             <Rows
+                title="Action"
+                fetchURL={requests.fetchActionMovies}
+                // isLarge={true}
+            />
+            <Rows
                 title="Top Rated"
                 fetchURL={requests.fetchTopRated}
                 // isLarge={true}
-            /> */}
+            />
             <Rows
                 title="Trending"
                 fetchURL={requests.fetchTrending}
                 // isLarge={true}
             />
-            {/* <Rows
+            <Rows
                 title="Comedy"
                 fetchURL={requests.fetchComedy}
-                // isLarge={true}
-            />
-            <Rows
-                title="Action"
-                fetchURL={requests.fetchActionMovies}
                 // isLarge={true}
             />
             <Rows
@@ -45,11 +45,12 @@ function HomeScreen() {
                 fetchURL={requests.fetchRomance}
                 // isLarge={true}
             />
+            
             <Rows
                 title="Documentaries"
                 fetchURL={requests.fetchDocs}
                 // isLarge={true}
-            /> */}
+            />
         </div>
     )
 }
