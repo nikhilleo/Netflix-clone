@@ -7,7 +7,7 @@ console.log(Date(Date.now().toLocaleString()))
 
 
 mongoose.connect(
-process.env.DB_URL
+process.env.MONGO_URL
 , {
   useNewUrlParser: true,
   useCreateIndex: true,
