@@ -10,14 +10,14 @@ const Requests = {
     // fetchHorror:`discover/movie?api_key=${api_key}&with_genres=27`,
     // fetchRomance:`discover/movie?api_key=${api_key}&with_genres=10749`,
     // fetchDocs:`discover/movie?api_key=${api_key}&with_genres=99`,
-    fetchTopRated:"http://localhost:8080/topRated/getTopRated",
-    fetchHorror:"http://localhost:8080/horror/getHorror",
-    fetchActionMovies:"http://localhost:8080/action/getAction",
-    fetchRomance:"http://localhost:8080/romance/getRomance",
-    fetchTrending:"http://localhost:8080/trending/getTrending",
-    fetchComedy:"http://localhost:8080/comedy/getComedy",
-    fetchDocs:"http://localhost:8080/docs/getDocs",
-    fetchNetflixOriginals:"http://localhost:8080/originals/getOriginals"
+    fetchTopRated:"https://netflix-clone-backend-1008.herokuapp.com/topRated/getTopRated",
+    fetchHorror:"https://netflix-clone-backend-1008.herokuapp.com/horror/getHorror",
+    fetchActionMovies:"https://netflix-clone-backend-1008.herokuapp.com/action/getAction",
+    fetchRomance:"https://netflix-clone-backend-1008.herokuapp.com/romance/getRomance",
+    fetchTrending:"https://netflix-clone-backend-1008.herokuapp.com/trending/getTrending",
+    fetchComedy:"https://netflix-clone-backend-1008.herokuapp.com/comedy/getComedy",
+    fetchDocs:"https://netflix-clone-backend-1008.herokuapp.com/docs/getDocs",
+    fetchNetflixOriginals:"https://netflix-clone-backend-1008.herokuapp.com/originals/getOriginals"
 }
 
 export default Requests;

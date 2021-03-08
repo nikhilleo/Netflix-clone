@@ -38,7 +38,7 @@ function Banner() {
             }
             else if(no<0)
             {
-                setMovie(movie.data[19])
+                setMovie(movie.data[movie.data.length - 1])
             }
             return movie;
         }
@@ -58,7 +58,7 @@ function Banner() {
     return (
 
         <div className="back" style={{
-            backgroundImage:`url(${Movie?.carousal_img})`,
+            backgroundImage:`url(${Movie?.carousal_img ? Movie?.carousal_img : Movie?.poster_img})`,
             backgroundSize:"cover",
             backgroundPosition:"revert"}}>
             <div style={{backgroundImage:`linear-gradient(to right,#171717 0,rgba(23,23,23,.98) 20%,rgba(23,23,23,.97) 25%,rgba(23,23,23,.95) 35%,rgba(23,23,23,.94) 40%,rgba(23,23,23,.92) 45%,rgba(23,23,23,.9) 50%,rgba(23,23,23,.87) 55%,rgba(23,23,23,.82) 60%,rgba(23,23,23,.75) 65%,rgba(23,23,23,.63) 70%,rgba(23,23,23,.45) 75%,rgba(23,23,23,.27) 80%,rgba(23,23,23,.15) 85%,rgba(23,23,23,.08) 90%,rgba(23,23,23,.03) 95%,rgba(23,23,23,0) 100%)`, width:"70%"}}>
