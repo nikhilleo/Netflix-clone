@@ -36,7 +36,7 @@ function Banner() {
             if(no>=0){
                 setMovie(movie.data[no]);
             }
-            else if(no<0)
+            else if(!Movie && no<0)
             {
                 console.log(movie.data.length);
                 setMovie(movie.data[10])
@@ -44,10 +44,6 @@ function Banner() {
             return movie;
         }
         fetchData();
-        if(!Movie)
-        {
-            fetchData();
-        }
     }, []);
     
     // console.log(Movie);
