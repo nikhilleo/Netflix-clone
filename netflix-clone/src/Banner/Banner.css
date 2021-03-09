@@ -181,3 +181,10 @@
 }
 
 
+
+
+.blank{
+    height: 90vh;
+    width: 100%;
+    background-color: #111;
+}
