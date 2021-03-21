@@ -8,6 +8,7 @@ import {
 import SignUp from "./SignUp/SignUp"
 import './App.css';
 import HomeScreen from "../src/HomeScreen/HomeScreen";
+import SignIn from './SignIn/SignIn';
 
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
           </Route>
           <Route exact path="/signup"> 
             <SignUp/>
+          </Route>
+          <Route exact path="/signin"> 
+            <SignIn/>
           </Route>
         </Switch>
       </Router>
