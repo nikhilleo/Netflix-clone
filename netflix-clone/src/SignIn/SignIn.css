@@ -1,0 +1,287 @@
+
+
+.main_singin{
+    background: url('https://assets.nflxext.com/ffe/siteui/vlv3/c43f3cc0-6f02-4b8a-9470-7b1732eb937d/7ae82418-beea-4868-8594-dddd284dc46c/IN-en-20210315-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+    height: 170vh;
+    background-size: cover;
+}
+
+.data1{
+    width: 100%;
+    height: 170vh;
+    background-color: rgba(0,0,0,.4);
+    background-image: linear-gradient(to top,rgba(0,0,0,.8) 0,rgba(0,0,0,0) 60%,rgba(0,0,0,.8) 100%);
+}
+
+
+.formLogin{
+    flex-direction: column;
+    padding: 10vh;
+    text-align: left;
+    position: relative;
+    left: 80vh;
+    display: flex;
+    justify-content: flex-start;
+    height: 80vh;
+    width: 25%;
+    top: 15vh;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.form_fields{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.form_fields > input{
+    /* padding: 0 10%;
+    height: 8vh; */
+    outline: none;
+    font-size: 1rem;
+    background:#333;
+    width: 80%;
+    margin-top: 4vh;    
+    border-radius: 4px;
+    border: 0;
+    color: #fff;
+    height: 30px;
+    line-height: 50px;
+    padding: 10px;
+}
+
+.form_fields > button{
+    margin-top: 4vh;
+    background-color: #e50914;
+    width: 85%;
+    font-weight: 900;
+    font-size: 1rem;
+    outline: none;
+    border: 0;
+    height: 40px;
+    color: #fff;
+}
+
+.extra{
+    color: #b3b3b3;
+    margin-top: 1.5vh;
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+}
+
+.extra > input:checked{
+    background-color: #333;
+}
+
+
+.gPlusButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4vh;
+    background-color: #e50914;
+    width: 85%;
+    font-weight: 900;
+    font-size: 1.2rem;
+    padding: 12px;
+    outline: none;
+    border: 0;
+    color: #fff;
+}
+
+
+.toSignUp{
+    color: white;
+}
+
+.toSignUp:visited{
+    color: white;
+}
+
+.new{
+    color: #b3b3b3;
+}
+
+.protect{
+    color: #b3b3b3;
+    font-size: 13px;
+}
+
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    position: absolute;
+    top:120vh;
+    height: 50vh;
+    color: #b3b3b3;
+    width: 100%;
+    background: rgba(0,0,0,.75);
+}
+/* 
+.first_row{
+    color: #b3b3b3;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.second_row{
+    color: #b3b3b3;
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+} */
+
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 0 10%;
+}
+
+.f_content{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    margin-bottom: 4vh;
+}
+
+.f_content1{
+    display: flex;
+    list-style: none;
+    width: 41.2%;
+    text-align: justify;
+    justify-content: space-between;
+}
+
+
+.footer > h4{
+    padding-left: 13%;
+}
+
+
+@media only screen and (max-width: 440px){
+    .main_singin{
+        background:#111;
+        height: 170vh;
+        background-size: cover;
+    }
+    .formLogin {
+        flex-direction: column;
+        padding: 2vh;
+        text-align: left;
+        position: relative;
+        left: 0vh;
+        display: flex;
+        justify-content: flex-start;
+        height: 80vh;
+        width: 85%;
+        margin-left: 6%;
+        top: 15vh;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    .gPlusButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4vh;
+        background-color: #e50914;
+        width: 85%;
+        font-weight: 900;
+        font-size: 1rem;
+        padding: 12px;
+        outline: none;
+        border: 0;
+        color: #fff;
+    }
+    .f_content {
+        flex-direction: column;
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        margin-bottom: 4vh;
+    }
+    .f_content1 {
+        flex-direction: column;
+        display: flex;
+        list-style: none;
+        justify-content: flex-start;
+        margin-bottom: 4vh;
+    }
+    .content{
+        display: flex;
+        width: 80%;
+        padding: 0 10%;
+        flex-direction: row;
+    }
+    ul > li{
+        margin-bottom: 2vh;
+    }
+}
+
+
+@media only screen and (max-width: 768px){
+    .main_singin{
+        background:#111;
+        height: 170vh;
+        background-size: cover;
+    }
+    .formLogin {
+        flex-direction: column;
+        padding: 2vh;
+        text-align: left;
+        position: relative;
+        left: 0vh;
+        display: flex;
+        justify-content: flex-start;
+        height: 80vh;
+        width: 85%;
+        margin-left: 6%;
+        top: 15vh;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    .gPlusButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 4vh;
+        background-color: #e50914;
+        width: 85%;
+        font-weight: 900;
+        font-size: 1rem;
+        padding: 12px;
+        outline: none;
+        border: 0;
+        color: #fff;
+    }
+    .f_content {
+        flex-direction: column;
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        margin-bottom: 4vh;
+    }
+    .f_content1 {
+        flex-direction: column;
+        display: flex;
+        list-style: none;
+        justify-content: flex-start;
+        margin-bottom: 4vh;
+    }
+    .content{
+        display: flex;
+        width: 80%;
+        padding: 0 10%;
+        flex-direction: row;
+    }
+    ul > li{
+        margin-bottom: 2vh;
+    }
+}
