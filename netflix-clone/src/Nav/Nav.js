@@ -26,8 +26,14 @@ function Nav() {
     return (
         <div className={`nav ${show ? "nav__black" : ""}`}>
             <div className="nav__content">
-                <img className="nav__logo" src={logo} alt=""/>
-                <img className="nav__avatar" src={avatar} alt=""/>
+                <div>
+                    <img className="nav__logo" src={logo} alt=""/>
+                </div>
+                <div className="nav_btns" >
+                {/* <img className="nav__avatar" src={avatar} alt=""/> */}
+                <button className="join_now" type="submit">Join Now </button>
+                <button className="join_now1" type="submit">Sign In </button>
+                </div>
             </div>
         </div>
     )
