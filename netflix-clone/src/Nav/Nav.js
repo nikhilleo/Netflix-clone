@@ -34,7 +34,7 @@ function Nav() {
                 <div className="nav_btns" >
                 {/* <img className="nav__avatar" src={avatar} alt=""/> */}
                 <Link to="/signup"><button className="join_now" type="submit">Join Now </button></Link>
-                <button className="join_now1" type="submit">Sign In </button>
+                <Link to="/signin"><button className="join_now1" type="submit">Sign In </button></Link>
                 </div>
             </div>
         </div>
