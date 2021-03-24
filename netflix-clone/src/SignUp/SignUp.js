@@ -17,6 +17,8 @@ function SignUp() {
                         <input className="email_text" type="email" placeholder="Email Address"/>
                         <button className="getStart" type="submit">Get Started </button>
                     </div>
+                    <br/>
+                    <button className="gPlusButton" style={{"width": "50%","marginLeft":"25%"}}><i class="fa fa-google-plus left-0" aria-hidden="true">  Sign In Wit Google</i></button>
                </div>
             </div>
         </div>
