@@ -1,0 +1,45 @@
+
+
+.nav_loggedIn{
+    border-bottom: 1px solid #e6e6e6;
+    height: 15vh;   
+    background-color: transparent;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nav__logo1{
+    object-fit: contain;
+    padding-left: 20px;
+    cursor: pointer;
+    /* height: 40px; */
+    position:relative;
+    left: 0px;
+    width: 130px;
+}
+
+.nav_loggedIn > a:visited{
+    color: black;
+    text-decoration-color: aqua;
+}
+
+
+.join_nowLogged {
+    /* border: none; */
+    outline: none;
+    height: 5.7vh;
+    font-size: x-large;
+    padding: 0 2vh;
+    color: #000;
+    margin-right: 3vw;
+    border: none;
+    border-radius: 2px;
+    background-color: transparent;
+}
+
+
+.join_nowLogged:hover{
+    text-decoration: underline;
+}
