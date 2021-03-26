@@ -31,12 +31,13 @@
 }
 
 .plan_main{
-    margin-left: 40vw;
+    margin-left: 29.7vw;
     display: flex;
     align-items: center;
 }
 
 .plan_div{
+    cursor: pointer;
     justify-content: center;
     display: flex;
     align-items: center;
@@ -57,4 +58,51 @@
 
 .active{
     opacity: 1;
+}
+
+
+.price{
+    display: flex;
+    background-color: aqua;
+    align-items: center;
+    justify-content: center;
+}
+
+.plan_div1{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    opacity: 0.7;
+    text-align: center;
+    margin: 0 1vw;
+    height: 22vh;
+    width: 10vw;
+    background-color: #eb0606;
+}
+
+.ab{
+    font-size: 1.5rem;
+    justify-content: space-evenly;
+    text-indent: initial;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    min-height: 60px;
+    align-items: center;
+}
+
+.plans_div{
+    margin-left: 10%;
+    width: 80%;
+}
+
+
+.extra__step2{
+    padding: 5vh;
+    font-size:small;
+    width: 80%;
+}
+
+
+.extra__step2 > p{
+    padding-bottom: 4vh;
 }
