@@ -1,0 +1,116 @@
+
+
+.stepLogoContainer{
+    display: flex;
+    padding: 10vh 0;
+    flex-direction: column;
+    height: 70vh;
+    /* background-color: aqua; */
+    margin-left: 30%;
+    width: 40%;
+    align-items: center;
+}
+
+.logo_outer{
+    height: 8vh;
+    padding-bottom: 5vh;
+}
+
+.paymentStepLogo{
+    height: 10vh;
+}
+
+.content_of_step3{
+    width: 97.5%;
+    /* margin: 1vh 10vw; */
+    justify-content: center;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    padding: 3;
+    align-items: center;
+}
+
+.content_of_step3 > p{
+    padding: 3vh 0;
+    width: 38%;
+    text-align: center;
+}
+
+.to_step_3{
+    cursor: pointer;
+    margin-top: 4vh;
+    height: 9vh;
+    width: 16vw;
+    background-color: #e50914;
+    outline: none;
+    color: #fff;
+    font-size: 1.5rem;
+    border-radius: 1vh;
+    border: none;
+}
+
+.footer_step3{
+    border-top: 1px solid #dadada;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    position: absolute;
+    top:100vh;
+    height: 50vh;
+    color: #757575;
+    width: 100%;
+    background: #f3f3f3;;
+}
+
+.footer_step3 > h4{
+    margin-left: 5vw;
+}
+
+
+@media only screen and (max-width: 440px){
+    .stepLogoContainer {
+        display: flex;
+        padding: 10vh 0;
+        flex-direction: column;
+        height: 70vh;
+        /* background-color: aqua; */
+        margin-left: 0;
+        width: 100%;
+        align-items: center;
+    }
+    .content_of_step3 > p {
+        padding: 3vh 0;
+        width: 65%;
+        text-align: center;
+    }
+    .footer_step2{
+        border-top: 1px solid #dadada;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        position: absolute;
+        top:150vh;
+        height: 50vh;
+        color: #757575;
+        width: 105%;
+        background: #f3f3f3;;
+    }
+    .to_step_3 {
+        cursor: pointer;
+        margin-top: 4vh;
+        height: 7vh;
+        width: 45%;
+        background-color: #e50914;
+        outline: none;
+        color: #fff;
+        font-size: 1.5rem;
+        border-radius: 1vh;
+        border: none;
+    }
+    .footer_step3 > h4{
+        justify-content: center;
+    }
+}
