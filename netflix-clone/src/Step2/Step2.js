@@ -1,3 +1,6 @@
+
+
+
 import React, { useEffect, useState } from 'react'
 import "./Step2.css"
 import LoggedInNav from '../LoggedInNav/LoggedInNav';
@@ -11,6 +14,100 @@ function Step2() {
     }, [])
 
     const [index, setIndex] = useState();
+
+    useEffect(() => {
+        if(index==undefined)
+        {
+            setIndex(1);
+            // console.log(document.getElementsByClassName("price_table_data")[0].children[index].classList.add("acticve_data"));
+            console.log(index)
+        }
+        else
+        {
+            console.log(document.getElementsByClassName("price_table_data")[0].children[index].classList.add("active_data"));
+            console.log(document.getElementsByClassName("price_table_data")[1].children[index].classList.add("active_data"));
+            console.log(document.getElementsByClassName("price_table_data")[2].children[index].classList.add("active_data"));
+            console.log(index)
+            switch (index) {
+                case 0:
+                    console.log(document.getElementsByClassName("price_table_data")[0].children[0].classList.add("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[1].children[0].classList.add("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[2].children[0].classList.add("active_data"));
+
+                    console.log(document.getElementsByClassName("price_table_data")[0].children[1].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[1].children[1].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[2].children[1].classList.remove("active_data"));
+
+                    console.log(document.getElementsByClassName("price_table_data")[0].children[2].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[1].children[2].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[2].children[2].classList.remove("active_data"));
+
+                    console.log(document.getElementsByClassName("price_table_data")[0].children[3].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[1].children[3].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[2].children[3].classList.remove("active_data"));
+                    break;
+
+                case 1:
+                    console.log(document.getElementsByClassName("price_table_data")[0].children[1].classList.add("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[1].children[1].classList.add("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[2].children[1].classList.add("active_data"));
+
+                    console.log(document.getElementsByClassName("price_table_data")[0].children[0].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[1].children[0].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[2].children[0].classList.remove("active_data"));
+
+                    console.log(document.getElementsByClassName("price_table_data")[0].children[2].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[1].children[2].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[2].children[2].classList.remove("active_data"));
+
+                    console.log(document.getElementsByClassName("price_table_data")[0].children[3].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[1].children[3].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[2].children[3].classList.remove("active_data"));    
+
+                    break;
+
+                case 2:
+                    console.log(document.getElementsByClassName("price_table_data")[0].children[2].classList.add("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[1].children[2].classList.add("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[2].children[2].classList.add("active_data"));
+
+                    console.log(document.getElementsByClassName("price_table_data")[0].children[0].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[1].children[0].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[2].children[0].classList.remove("active_data"));
+
+                    console.log(document.getElementsByClassName("price_table_data")[0].children[1].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[1].children[1].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[2].children[1].classList.remove("active_data"));
+
+                    console.log(document.getElementsByClassName("price_table_data")[0].children[3].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[1].children[3].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[2].children[3].classList.remove("active_data"));  
+
+                    break;
+
+                case 3:
+                    console.log(document.getElementsByClassName("price_table_data")[0].children[3].classList.add("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[1].children[3].classList.add("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[2].children[3].classList.add("active_data"));
+
+                    console.log(document.getElementsByClassName("price_table_data")[0].children[0].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[1].children[0].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[2].children[0].classList.remove("active_data"));
+
+                    console.log(document.getElementsByClassName("price_table_data")[0].children[1].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[1].children[1].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[2].children[1].classList.remove("active_data"));
+
+                    console.log(document.getElementsByClassName("price_table_data")[0].children[2].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[1].children[2].classList.remove("active_data"));
+                    console.log(document.getElementsByClassName("price_table_data")[2].children[2].classList.remove("active_data"));  
+                    break;
+                default:
+                    break;
+            }
+        }
+    }, [index])
+
 
     const handleClick = (e) =>{
         // setIndex(e.target.name);
@@ -90,30 +187,56 @@ function Step2() {
                     </div>
                 </div>
                 <table className="ab" >
-                    <tr style={{fontSize:'17px'}} >
-                        <td style={{width:"40vw"}}>Monthly Plan</td>
-                        <td style={{width:"16vw"}}>₹ 199</td>
-                        <td style={{width:"15vw"}}>₹ 499</td>
-                        <td style={{width:"14vw"}}>₹ 649</td>
-                        <td style={{width:"11vw"}}>₹ 799</td>
+                    <tr className="table_price">
+                        <div className="type_table">
+                            <td style={{width:"68vw"}}>Monthly Plan</td>
+                        </div>
+                        <div className="price_table_data">
+                            <td >₹ 199</td>
+                            <td >₹ 499</td>
+                            <td >₹ 649</td>
+                            <td >₹ 799</td>
+                        </div>
                     </tr>
                 </table>
                 <table className="ab" >
-                    <tr style={{fontSize:'17px'}}>
+                    {/* <tr style={{fontSize:'17px'}}>
                         <td style={{width:"40vw"}}>Video quality</td>
                         <td style={{width:"15vw"}}>Good</td>
                         <td style={{width:"15vw"}}>Good</td>
                         <td style={{width:"14vw"}}>Better</td>
                         <td style={{width:"9vw"}}>Best</td>
+                    </tr> */}
+                    <tr className="table_price">
+                        <div className="type_table">
+                            <td style={{width:"68vw"}}>Video quality</td>
+                        </div>
+                        <div className="price_table_data">
+                            <td >Good</td>
+                            <td >Good</td>
+                            <td >Better</td>
+                            <td >Best</td>
+                        </div>
                     </tr>
                 </table>
                 <table className="ab" >
-                    <tr style={{fontSize:'17px'}}>
+                    {/* <tr style={{fontSize:'17px'}}>
                         <td style={{width:"40vw"}}>Resolution</td>
                         <td style={{width:"15vw"}}>480p</td>
                         <td style={{width:"15vw"}}>480p</td>
                         <td style={{width:"14vw"}}>1080p</td>
                         <td style={{width:"9vw"}}>4K+HDR</td>
+                    </tr> */}
+                     <tr className="table_price">
+                        <div className="type_table">
+                            <td style={{width:"108vw"}}>Resolution</td>
+                        </div>
+                        <div className="price_table_data" id="res">
+                            <td >480p</td>
+                            <td >480p</td>
+                            <td >1080p</td>
+                            <td >4K+HDR</td>
+                        </div>
                     </tr>
                 </table>
             <div className="extra__step2">
