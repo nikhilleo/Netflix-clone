@@ -11,6 +11,7 @@ import HomeScreen from "../src/HomeScreen/HomeScreen";
 import SignIn from './SignIn/SignIn';
 import Step1 from './Step1/Step1';
 import Step2 from './Step2/Step2';
+import Step3 from './Step3/Step3';
 
 
 function App() {
@@ -33,6 +34,9 @@ function App() {
             </Route>
             <Route exact path="/step2"> 
               <Step2/>
+            </Route>
+            <Route exact path="/step3"> 
+              <Step3/>
             </Route>
           </div>
         </Switch>
