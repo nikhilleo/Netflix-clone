@@ -13,6 +13,10 @@ function Step2() {
         document.getElementsByClassName("plan_div")[1].classList.add("active"); 
     }, [])
 
+    const handleClickNext = ()=>{
+        console.log(index);
+    }
+
     const [index, setIndex] = useState();
 
     useEffect(() => {
@@ -244,10 +248,24 @@ function Step2() {
                 Full HD (1080p), Ultra HD (4K) and HDR availability subject to your internet service and device capabilities. Not all content available in HD, Full HD, Ultra HD or HDR. See Terms of Use for more details.
                 </p>
                 <p>Only people who live with you may use your account. Watch on 4 different devices at the same time with Premium, 2 with Standard, and 1 with Basic and Mobile.</p>
-                <Link to="/step3"><button className="to_step_2" type="submit">Next </button></Link>
+                <Link to="/step3"><button onClick={handleClickNext} className="to_step_2" type="submit">Next </button></Link>
             </div>
             </div>
-            
+            <div className="footer_step2">
+                <h4>Questions? Call 000-800-040-1843</h4>
+                <div className="content">
+                <ul className="f_content__1">
+                    <li>FAQ</li>
+                    <li>Help Centre</li>
+                    <li>Terms of Use</li>
+                    <li>Privacy</li>
+                </ul>
+                <ul className="f_content1__1">
+                    <li>Cookie Preferences</li>
+                    <li>Corporate Information</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     )
 }
