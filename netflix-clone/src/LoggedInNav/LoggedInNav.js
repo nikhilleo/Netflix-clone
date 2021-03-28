@@ -14,7 +14,7 @@ function LoggedInNav() {
                     <img className="nav__logo1" src={logo} alt=""/>
                 </div>
             </Link>  
-            <Link to="/signin"><button className="join_nowLogged" type="submit">Sign Out </button></Link>
+            <Link to="/signin"><button style={{"cursor":"pointer"}} className="join_nowLogged" type="submit">Sign Out </button></Link>
                   
         </div>
     )

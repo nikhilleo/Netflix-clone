@@ -11,15 +11,16 @@
 }
 
 .nav_btns{
+    width: 20%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     margin-left: 30%;
     margin-top: 0.2vh;
-
 }
 
 .join_now{
+    cursor: pointer;
     border: none;
     outline: none;
     height: 5.7vh;
@@ -27,7 +28,6 @@
     padding: 0 2vh;
     color: #fff;
     border-radius: 2px;
-    margin-right: 3vw;
     border: 1px solid rgb(102, 0, 0);
     background-color:  #c4000a;
 }
@@ -36,13 +36,13 @@
 }
 
 .join_now1{
+    cursor: pointer;
     border: none;
     outline: none;
     height: 5.7vh;
     font-size: large;
     padding: 0 2vh;
     color: #fff;
-    margin-right: 3vw;
     border: 1px solid gray;
     border-radius: 2px;
     background-color: rgba(0, 0, 0, 0.9) ;
@@ -92,13 +92,15 @@
 
 
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 440px){
     .nav_btns{
+        width: 20%;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        margin-left: 30%;
-        margin-top: -0.2vh;
+        margin-left: 20%;
+        margin-top: 0.2vh;
+    
     }
     .join_now{
         border: none;
@@ -136,7 +138,7 @@
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        margin-left: 34%;
+        margin-left: 21%;
         margin-top: -0.2vh;
     }
     .join_now{
@@ -150,7 +152,7 @@
         border: 1px solid rgb(102, 0, 0);
         background-color:  #c4000a;
         font-size: 11px;
-        width: 22vw;
+        width: 24vw;
         font-weight: 900;
     }
     .join_now1{
