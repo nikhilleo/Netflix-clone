@@ -1,9 +1,16 @@
 
 import Nav from "../Nav/Nav"
 import "./SignUp.css"
-
+import Axios from "axios"
+import { Redirect, useHistory } from "react-router"
 
 function SignUp() {
+    const history = useHistory();
+    
+    const handleChange = ()=>{
+        window.open("http://localhost:8080/auth/google", "_self");
+    }
+
     return (
         <div>
             <div className="banner_signup">
@@ -18,7 +25,7 @@ function SignUp() {
                         <button style={{"cursor":"pointer"}} className="getStart" type="submit">Get Started </button>
                     </div>
                     <br/>
-                    <button className="gPlusButton" style={{"width": "50%","cursor":"pointer", "marginLeft":"25%"}}><i class="fa fa-google-plus left-0" aria-hidden="true">  Sign In With Google</i></button>
+                    <button onClick={handleChange} className="gPlusButton" style={{"width": "50%","cursor":"pointer", "marginLeft":"25%"}}><i class="fa fa-google-plus left-0" aria-hidden="true">  Sign In With Google</i></button>
                </div>
             </div>
         </div>
