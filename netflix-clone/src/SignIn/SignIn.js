@@ -25,7 +25,7 @@ function SignIn() {
                     </div>
                     <br/>
                     <br/>
-                        <button className="gPlusButton"><i class="fa fa-google-plus left-0" aria-hidden="true">  Sign In Wit Google</i></button>
+                        <button className="gPlusButton"><i class="fa fa-google-plus left-0" aria-hidden="true">  Sign In With Google</i></button>
                     <br/>
                     <div>
                       <span className="new">New To Netflix?</span> <Link className="toSignUp" to='signup'>Sign up now.</Link>

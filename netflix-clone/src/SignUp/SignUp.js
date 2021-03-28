@@ -15,10 +15,10 @@ function SignUp() {
                     <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
                     <div className="email_and_getStart" >
                         <input className="email_text" type="email" placeholder="Email Address"/>
-                        <button className="getStart" type="submit">Get Started </button>
+                        <button style={{"cursor":"pointer"}} className="getStart" type="submit">Get Started </button>
                     </div>
                     <br/>
-                    <button className="gPlusButton" style={{"width": "50%","marginLeft":"25%"}}><i class="fa fa-google-plus left-0" aria-hidden="true">  Sign In Wit Google</i></button>
+                    <button className="gPlusButton" style={{"width": "50%","cursor":"pointer", "marginLeft":"25%"}}><i class="fa fa-google-plus left-0" aria-hidden="true">  Sign In With Google</i></button>
                </div>
             </div>
         </div>

@@ -27,9 +27,12 @@
     padding-left: 1vw;
 }
 
+#last_con{
+    margin-bottom: 4vh;
+}
 
 .to_step_2{
-    margin-top: 4vh;
+    cursor: pointer;
     height: 9vh;
     width: 23vw;
     background-color: #e50914;
