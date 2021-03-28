@@ -1,9 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./Step1.css";
 import LoggedInNav from '../LoggedInNav/LoggedInNav';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 function Step1() {
+
+    const history = useHistory();
+
+    useEffect(() => {
+        axios.get("http://localhost:8080/auth/checkLogged").then((res)=>{
+            console.log(res);
+        }).catch((err)=>{
+            console.log(err);      
+        })
+    }, [])
+
     return (
         <div className="main">
             <LoggedInNav/>
